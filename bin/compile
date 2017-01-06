@@ -21,7 +21,7 @@ if [ -d "$ENV_DIR" ]; then
     echo "$e=$(cat $ENV_DIR/$e)" >> .env
   done
 
-  echo -e "\n----->  Loaded ENV vars"
+  echo -e "\n-----> Loaded ENV vars"
   cat .env
 fi
 
