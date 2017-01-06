@@ -11,5 +11,19 @@ set -u
 BUILD_DIR=$1
 cd $BUILD_DIR
 
+# Removes dev .env
+rm .env
+
+# Copy ENV vars into .env
+ENV_DIR=$3
+if [ -d "$ENV_DIR" ]; then
+  for e in $(ls $ENV_DIR); do
+    echo "$e=$(cat $ENV_DIR/$e)" > .env
+    :
+  done
+
+  cat .env
+fi
+
 # Build the javascript bundle
 npm run build
