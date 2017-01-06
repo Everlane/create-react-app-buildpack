@@ -18,7 +18,7 @@ rm .env
 ENV_DIR=$3
 if [ -d "$ENV_DIR" ]; then
   for e in $(ls $ENV_DIR); do
-    echo "$e=$(cat $ENV_DIR/$e)" > .env
+    echo "$e=$(cat $ENV_DIR/$e)" >> .env
   done
 
   cat .env
